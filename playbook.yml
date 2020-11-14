@@ -1,0 +1,12 @@
+- name: MobileComm network installation
+  hosts: localhost
+  tasks:
+    - name: Debug the OS distribution  
+      debug:
+        msg: "{{ hostvars[inventory_hostname].ansible_distribution }}"
+    - name: Debug the OS major version
+      debug:
+        msg: "{{ hostvars[inventory_hostname].ansible_distribution_major_version }}"
+    - name: Debug the OS version
+      debug:
+        msg: "{{ hostvars[inventory_hostname].ansible_distribution_version }}"
