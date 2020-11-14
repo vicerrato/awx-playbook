@@ -10,3 +10,14 @@
     - name: Debug the OS version
       debug:
         msg: "{{ hostvars[inventory_hostname].ansible_distribution_version }}"
+    - name: Debug the ansible_virtualization_role
+      debug:
+        msg: This is a Virtual Host
+      when: ansible_virtualization_role == 'guest'
+      ignore_errors: yes
+    
+    - name: Debug the ansible_virtualization_role
+      debug:
+        msg: This is a Physical Host
+      when: ansible_virtualization_role == 'host'
+      ignore_errors: yes
