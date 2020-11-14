@@ -13,11 +13,11 @@
     - name: Debug the ansible_virtualization_role
       debug:
         msg: This is a Virtual Host
-      when: ansible_virtualization_role == 'guest'
+      when: ansible_virtualization_role == 'host'
       ignore_errors: yes
-    
+
     - name: Debug the ansible_virtualization_role
       debug:
         msg: This is a Physical Host
-      when: ansible_virtualization_role == 'host'
+      when: ansible_virtualization_role == 'guest'
       ignore_errors: yes
