@@ -13,11 +13,11 @@
     - name: Debug the ansible_virtualization_role
       debug:
         msg: This is a Virtual Host
-      when: ansible_virtualization_role == 'host' and "{{ hostvars[inventory_hostname].ansible_distribution }}" == 'CentOS'
+      when: ansible_virtualization_role == 'host' and ansible_distribution == 'CentOS'
       ignore_errors: yes
 
     - name: Debug the ansible_virtualization_role
       debug:
         msg: This is a Physical Host
-      when: ansible_virtualization_role == 'guest' and "{{ hostvars[inventory_hostname].ansible_distribution }}" == 'CentOS'
+      when: ansible_virtualization_role == 'guest' and ansible_distribution == 'CentOS'
       ignore_errors: yes
